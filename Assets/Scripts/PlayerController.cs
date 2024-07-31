@@ -13,24 +13,21 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        controller = gameObject.AddComponent<CharacterController>();
+        controller = gameObject.GetComponent<CharacterController>();
     }
 
     void Update()
     {
-        if (controller.isGrounded) {
-            groundedPlayer = true;
-        }
+        groundedPlayer = controller.isGrounded;
 
         Debug.Log(groundedPlayer);
 
         if (groundedPlayer && playerVelocity.y < 0)
         {
-            playerVelocity.y = 0f;
+            playerVelocity.y = -2f;
         }
 
         Vector3 move = (transform.forward * Input.GetAxisRaw("Vertical")) + (transform.right * Input.GetAxisRaw("Horizontal"));
-        controller.Move(move * Time.deltaTime * playerSpeed);
 
         if (move != Vector3.zero)
         {
@@ -40,11 +37,12 @@ public class PlayerController : MonoBehaviour
         // Changes the height position of the player..
         if (Input.GetButtonDown("Jump") && groundedPlayer)
         {
+            Debug.Log("jump");
             groundedPlayer = false;
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+            playerVelocity.y = Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
         }
-
         playerVelocity.y += gravityValue * Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
+
+        controller.Move(move * Time.deltaTime * playerSpeed + playerVelocity * Time.deltaTime);
     }
 }
