@@ -11,12 +11,7 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 1.0f;
     public float gravityValue = -9.81f;
 
-    private void Start()
-    {
-        controller = gameObject.GetComponent<CharacterController>();
-    }
-
-    void Update()
+    void Movement() 
     {
         groundedPlayer = controller.isGrounded;
 
@@ -44,5 +39,25 @@ public class PlayerController : MonoBehaviour
         playerVelocity.y += gravityValue * Time.deltaTime;
 
         controller.Move(move * Time.deltaTime * playerSpeed + playerVelocity * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Interactable"))
+        {
+            IInteractable interactable = other.gameObject.GetComponent<IInteractable>();
+
+            interactable.Helper();
+        }
+    }
+
+    private void Start()
+    {
+        controller = gameObject.GetComponent<CharacterController>();
+    }
+
+    void Update()
+    {
+       Movement();
     }
 }
