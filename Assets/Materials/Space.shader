@@ -103,7 +103,7 @@ Shader "Unlit/Space"
 
                 i.uv = float2(atan2(i.pos.z, i.pos.x)/3.14, asin(i.pos.y)/1.57);
 
-                float size = 0.015;
+                float size = 0.01;
 
                 fixed4 col = Unity_SimpleNoise_float(i.uv, 100) * _BackgroundColor;
                 col += Unity_SimpleNoise_float(i.uv, 10) * _NebulaColor;
@@ -113,7 +113,7 @@ Shader "Unlit/Space"
                 if (star > 0.8) {
                     float2 center = size * pos + float2(size * unity_noise_randomValue(pos + float2(0.1, 0.2)), size * unity_noise_randomValue(pos + float2(0.2, 0.1)));
                     float dist = saturate(distance(i.uv, center)/(0.5*size));
-                    col = lerp(col, fixed4(1,1,1,1), pow(saturate(1. - dist), 15));
+                    col = lerp(col, fixed4(1,1,1,1), invLerp(0., 0.1, pow(saturate(1. - dist), 15 + 20 * unity_noise_randomValue(pos + float2(0.2, 0.2)))));
                 }
                 return col;
             }

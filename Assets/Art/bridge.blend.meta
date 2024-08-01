@@ -17,6 +17,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: light
+    second: {fileID: 2100000, guid: 9cea03e06ecfe7f4bb921f0bc40fdb19, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nacelle
+    second: {fileID: 2100000, guid: 104f1ec6e474ff146b27d28426d021b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: tex
     second: {fileID: 2100000, guid: d633059ff7455ee40be2859e2f5d3a30, type: 2}
   - first:
