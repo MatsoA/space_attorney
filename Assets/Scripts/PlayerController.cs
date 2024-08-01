@@ -47,7 +47,17 @@ public class PlayerController : MonoBehaviour
         {
             IInteractable interactable = other.gameObject.GetComponent<IInteractable>();
 
-            interactable.Helper();
+            interactable.HelperEnter();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Interactable"))
+        {
+            IInteractable interactable = other.gameObject.GetComponent<IInteractable>();
+
+            interactable.HelperExit();
         }
     }
 

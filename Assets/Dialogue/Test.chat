@@ -1,0 +1,25 @@
+"TestStart": {
+	"Text": "Welcome to the Test!"
+	"Responses": {
+		TestPositive: "Yayy!"
+		TestNegative: okay..
+	}
+}
+"TestPositive": {
+	"Text": "I like your enthusiasm! Can I count on you?" 
+	"Responses": {
+		"TestEndPositive: You bet!"
+	}
+}
+"TestNegative": {
+	"Text": "Don't be so glum chum, it'll be fun!"
+	"Responses": {
+		"TestEndNegative: "If you say so..."
+	}
+}
+"TestEndPositive": {
+	"Text": "Great!"
+}
+"TestEndNegative": {
+	"Text": "Well I do say so, so..."
+}
