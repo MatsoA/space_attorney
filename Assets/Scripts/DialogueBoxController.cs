@@ -13,10 +13,10 @@ public class DialogueBoxController : MonoBehaviour
     [SerializeField] TMP_Text dialogueText;
     [SerializeField] TMP_Text nameText;
     [SerializeField] GameObject dialogueBox;
+    [SerializeField] GameObject buttonTest; 
+    public GameObject Player;
 
-    public static event Action OnDialogueStarted;
-    public static event Action OnDialogueEnded;
-    bool inConversation;
+    Conversation currentConversation = null;
 
     private void Awake()
     {
@@ -31,21 +31,48 @@ public class DialogueBoxController : MonoBehaviour
     public void StartDialogue(Conversation conversation, string name) {
         nameText.text = name;
         dialogueBox.gameObject.SetActive(true);
-        ShowDialogue(conversation);
+        currentConversation = conversation;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        Player.GetComponent<PlayerController>().inConversation = true;
+
+        ShowDialogue("Start");
     }
 
-    void ShowDialogue(Conversation conversation) {
-        inConversation = true;
+    public void ShowDialogue(string Id) {
 
-        ConvoEntry convoEntry = conversation.convoData[0];
+        //ConvoEntry convoEntry = conversation.convoData[0];
 
-        while (inConversation) 
-        {
-            DialoguePoint dialoguePoint = convoEntry.dialoguePoint;
+        ConvoEntry convoEntry = currentConversation.convoData.Find(
+            delegate(ConvoEntry cv)
+            {
+                return cv.Id == Id;
+            }
+        );
 
-            dialogueText.text = dialoguePoint.Text;
-        }
+        dialogueText.text = convoEntry.Text;
+        buttonTest.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = convoEntry.Responses[0].ResponseText;
+        buttonTest.GetComponent<ResponseButtonScript>().nextId = convoEntry.Responses[0].NextId;
+
+        buttonTest.GetComponent<ResponseButtonScript>().endFlag = convoEntry.EndFlag;
+ 
     }
+
+    public void EndDialogue() {
+        nameText.text = "";
+        dialogueBox.gameObject.SetActive(false);
+        currentConversation = null;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        Player.GetComponent<PlayerController>().inConversation = true;
+
+        //ShowDialogue("Start");
+    }
+
     
 
     // public void StartDialogue(string[] dialogue, int startPosition, string name)

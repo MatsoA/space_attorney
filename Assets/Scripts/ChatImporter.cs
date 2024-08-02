@@ -76,11 +76,9 @@ public class ChatImporter : ScriptedImporter
 
             dialogueDictionary.Add(new ConvoEntry{
                 Id = key,
-                dialoguePoint = new DialoguePoint {
-                    Text = text,
-                    Responses = responses,
-                    EndFlag = endFlag
-                }
+                Text = text,
+                Responses = responses,
+                EndFlag = endFlag
             });
 
 

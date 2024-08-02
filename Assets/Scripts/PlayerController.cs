@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 1.0f;
     public float gravityValue = -9.81f;
 
+    public bool inConversation = false;
+
     private IInteractable interactable = null;
 
     void Movement() 
@@ -77,11 +79,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-       Movement();
+        if (!inConversation) {
+            Movement();
+        }
 
-       if (Input.GetKeyDown(KeyCode.E))
-       {
-        Interact();
-       }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Interact();
+        }
     }
 }

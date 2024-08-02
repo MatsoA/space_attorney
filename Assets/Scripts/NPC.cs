@@ -7,7 +7,7 @@ public class NPC : MonoBehaviour, IInteractable
 {
     public TMP_Text helperText;
 
-    public string name;
+    public string npcName;
     public Conversation conversation;
 
     // Start is called before the first frame update
@@ -19,7 +19,7 @@ public class NPC : MonoBehaviour, IInteractable
     public void HelperEnter () {
         Debug.Log("Ready");
 
-        helperText.text = $"Click E to speak to {name}";
+        helperText.text = $"Click E to speak to {npcName}";
     }
 
     public void HelperExit () {
@@ -30,7 +30,7 @@ public class NPC : MonoBehaviour, IInteractable
     
     public void Interact () 
     {
-       DialogueBoxController.instance.StartDialogue(conversation, name);
+       DialogueBoxController.instance.StartDialogue(conversation, npcName);
     }
 
     public void Uninteract () {
