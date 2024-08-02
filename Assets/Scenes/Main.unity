@@ -638,7 +638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854614ad4bef1594faee57bbab2e156b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conversation: {fileID: -7247466412503575773, guid: 4fcd5a55cd2e7514cb8cea3dc9ce01c9, type: 3}
+  conversation: {fileID: -7247466412503575773, guid: 6a41bd74c6b313f40906ee20afc85164, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

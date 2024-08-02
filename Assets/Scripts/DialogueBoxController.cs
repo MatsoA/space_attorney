@@ -7,44 +7,46 @@ using System;
 
 public class DialogueBoxController : MonoBehaviour
 {
-    public Conversation conversation;
+    
+    public static DialogueBoxController instance;
 
-    void Start() {
-        Debug.Log("eee");
+    [SerializeField] TMP_Text dialogueText;
+    [SerializeField] TMP_Text nameText;
+    [SerializeField] GameObject dialogueBox;
 
-        conversation.printData();
-        
+    public static event Action OnDialogueStarted;
+    public static event Action OnDialogueEnded;
+    bool inConversation;
+
+    private void Awake()
+    {
+        if (instance == null) {
+            instance = this;
+        }
+        else {
+            Destroy(this);
+        }
     }
 
-    void RunDialogue () {
-        
+    public void StartDialogue(Conversation conversation, string name) {
+        nameText.text = name;
+        dialogueBox.gameObject.SetActive(true);
+        ShowDialogue(conversation);
     }
 
+    void ShowDialogue(Conversation conversation) {
+        inConversation = true;
 
+        ConvoEntry convoEntry = conversation.convoData[0];
 
+        while (inConversation) 
+        {
+            DialoguePoint dialoguePoint = convoEntry.dialoguePoint;
 
-
-
-
-    // public static DialogueBoxController instance;
-
-    // [SerializeField] TMP_Text dialogueText;
-    // [SerializeField] TMP_Text nameText;
-    // [SerializeField] CanvasGroup dialogueBox;
-
-    // public static event Action OnDialogueStarted;
-    // public static event Action OnDialogueEnded;
-    // bool skipLineTriggered;
-
-    // private void Awake()
-    // {
-    //     if (instance == null) {
-    //         instance = this;
-    //     }
-    //     else {
-    //         Destroy(this);
-    //     }
-    // }
+            dialogueText.text = dialoguePoint.Text;
+        }
+    }
+    
 
     // public void StartDialogue(string[] dialogue, int startPosition, string name)
     // {

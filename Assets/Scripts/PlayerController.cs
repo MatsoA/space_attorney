@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 1.0f;
     public float gravityValue = -9.81f;
 
+    private IInteractable interactable = null;
+
     void Movement() 
     {
         groundedPlayer = controller.isGrounded;
@@ -41,11 +43,19 @@ public class PlayerController : MonoBehaviour
         controller.Move(move * Time.deltaTime * playerSpeed + playerVelocity * Time.deltaTime);
     }
 
+    void Interact() {
+        if (interactable != null) {
+            interactable.Interact();
+        } else {
+            Debug.Log("No interactable nearby");
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Interactable"))
         {
-            IInteractable interactable = other.gameObject.GetComponent<IInteractable>();
+            interactable = other.gameObject.GetComponent<IInteractable>();
 
             interactable.HelperEnter();
         }
@@ -55,9 +65,8 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Interactable"))
         {
-            IInteractable interactable = other.gameObject.GetComponent<IInteractable>();
-
             interactable.HelperExit();
+            interactable = null;
         }
     }
 
@@ -69,5 +78,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
        Movement();
+
+       if (Input.GetKeyDown(KeyCode.E))
+       {
+        Interact();
+       }
     }
 }
