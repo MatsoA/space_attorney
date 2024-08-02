@@ -7,6 +7,25 @@ using System;
 
 public class DialogueBoxController : MonoBehaviour
 {
+    public Conversation conversation;
+
+    void Start() {
+        Debug.Log("eee");
+
+        //conversation.printData();
+        
+    }
+
+    void RunDialogue () {
+        
+    }
+
+
+
+
+
+
+
     // public static DialogueBoxController instance;
 
     // [SerializeField] TMP_Text dialogueText;

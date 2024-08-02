@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text.Json;
 using UnityEngine;
+using System;
 
-[System.Serializable]
+[Serializable]
 public struct DialoguePoint 
 {
     public string Text;
@@ -11,16 +12,27 @@ public struct DialoguePoint
     public bool EndFlag;
 }
 
-[System.Serializable]
-public struct DictionaryEntry
+[Serializable]
+public struct ConvoEntry
 {
-    string Id;
-    DialoguePoint dialogue_point; 
+    public string Id;
+    public DialoguePoint dialoguePoint;
 }
 
 [CreateAssetMenu]
 public class Conversation : ScriptableObject
 {
-    public List<DictionaryEntry> convoData;
+
+    public char testField;
+    [SerializeField] public List<ConvoEntry> convoData;
+
+    public void printData() {
+        foreach (var entry in this.convoData)
+        {
+            Debug.Log(entry.dialoguePoint.Text);
+            Debug.Log(entry.dialoguePoint.Responses);
+            Debug.Log(entry.dialoguePoint.EndFlag);
+        }
+    }
 
 }

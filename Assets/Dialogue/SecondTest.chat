@@ -1,35 +1,35 @@
 {
   "TestStart": {
-    "Text": "Welcome to the Test!",
+    "Text": "This is the other test",
     "Responses": [
-      "TestPositive": "Yayy!",
-      "TestNegative": "okay..",
+      "TestPositive": "Nice",
+      "TestNegative": "I've seen this before",
     ],
     "EndFlag": "False"
   },
   "TestPositive": {
-    "Text": "I like your enthusiasm! Can I count on you?",
+    "Text": "Yep",
     "Responses": [
-      "TestEndPositive": "You bet!",
+      "TestEndPositive": "Yep",
     ],
     "EndFlag": "False"
   },
   "TestNegative": {
-    "Text": "Don't be so glum chum, it'll be fun!",
+    "Text": "Hey look at that you've been exploring",
     "Responses": [
-      "TestEndNegative": "If you say so...",
+      "TestEndNegative": "I mean not really there's only two things",
     ],
     "EndFlag": "False"
   },
   "TestEndPositive": {
-    "Text": "Great!",
+    "Text": "Okk well bye",
     "Responses": [
       "End Convo": "",
     ],
     "EndFlag": "True"
   },
   "TestEndNegative": {
-    "Text": "Well I do say so, so...",
+    "Text": "Still counts",
     "Responses": [
       "End Convo": "",
     ],
