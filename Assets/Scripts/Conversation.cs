@@ -8,8 +8,15 @@ using System;
 public struct DialoguePoint 
 {
     public string Text;
-    public string[] Responses;
+    [SerializeField] public List<ResponsePair> Responses;
     public bool EndFlag;
+}
+
+[Serializable]
+public struct ResponsePair
+{
+    public string NextId;
+    public string ResponseText;
 }
 
 [Serializable]
@@ -30,7 +37,9 @@ public class Conversation : ScriptableObject
         foreach (var entry in this.convoData)
         {
             Debug.Log(entry.dialoguePoint.Text);
-            Debug.Log(entry.dialoguePoint.Responses);
+            foreach(var response in entry.dialoguePoint.Responses) {
+                Debug.Log($"{response.NextId}: {response.ResponseText}");
+            };
             Debug.Log(entry.dialoguePoint.EndFlag);
         }
     }

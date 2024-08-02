@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.AssetImporters;
 using System.IO;
+using System;
 
 [ScriptedImporter(1,"chat")]
 public class ChatImporter : ScriptedImporter
@@ -44,7 +45,7 @@ public class ChatImporter : ScriptedImporter
             var responsesEnd = trimmedEntry.IndexOf("\"EndFlag\":") - 1;
             var responsesString = trimmedEntry.Substring(responsesStart, responsesEnd - responsesStart).Trim();
             
-            var responses = new List<string>();
+            var responses = new List<ResponsePair>();
             if (responsesString != "{}")
             {
                 var responsesEntries = responsesString.Trim('[', ']').Split(",");
@@ -52,10 +53,14 @@ public class ChatImporter : ScriptedImporter
                 {
                     if (response == "" || response == "    ]") {
                         continue;
-                    }
+                    }  
 
-                    var responseKey = response.Substring(0, response.IndexOf(':')).Trim().Trim('"');
-                    responses.Add(responseKey);
+                    //Debug.Log(response.Trim().Split(':')[1].Trim().Trim('"'));
+
+                    var responseKey = response.Trim().Split(':')[0].Trim().Trim('"');
+                    var responseText = response.Trim().Split(':')[1].Trim().Trim('"');
+
+                    responses.Add(new ResponsePair {NextId = responseKey, ResponseText = responseText});
                 }
             }
             
@@ -73,7 +78,7 @@ public class ChatImporter : ScriptedImporter
                 Id = key,
                 dialoguePoint = new DialoguePoint {
                     Text = text,
-                    Responses = responses.ToArray(),
+                    Responses = responses,
                     EndFlag = endFlag
                 }
             });

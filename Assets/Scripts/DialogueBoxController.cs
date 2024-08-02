@@ -12,7 +12,7 @@ public class DialogueBoxController : MonoBehaviour
     void Start() {
         Debug.Log("eee");
 
-        //conversation.printData();
+        conversation.printData();
         
     }
 
