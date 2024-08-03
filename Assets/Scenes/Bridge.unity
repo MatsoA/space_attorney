@@ -982,7 +982,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7be3c2cf0cf954b4fb7af2531e0d79f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1902238935}
   m_SourcePrefab: {fileID: 100100000, guid: 7be3c2cf0cf954b4fb7af2531e0d79f0, type: 3}
 --- !u!1 &985733648
 GameObject:
@@ -1473,7 +1476,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -8391222552659086748, guid: 1969ee8b8c3387442acaf5c18e259142, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1626180846}
+    - targetCorrespondingSourceObject: {fileID: -5117700066308340382, guid: 1969ee8b8c3387442acaf5c18e259142, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1815955121}
   m_SourcePrefab: {fileID: 100100000, guid: 1969ee8b8c3387442acaf5c18e259142, type: 3}
 --- !u!1 &1490067684
 GameObject:
@@ -1705,6 +1714,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 65190046}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1626180842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8391222552659086748, guid: 1969ee8b8c3387442acaf5c18e259142, type: 3}
+  m_PrefabInstance: {fileID: 1485623528}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1626180846
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626180842}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 1969ee8b8c3387442acaf5c18e259142, type: 3}
 --- !u!1 &1640644282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1837,6 +1873,33 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4240677182355055224, guid: e2a6848098d7b7e4a8687f5e1725bdfd, type: 3}
+--- !u!1 &1815955117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5117700066308340382, guid: 1969ee8b8c3387442acaf5c18e259142, type: 3}
+  m_PrefabInstance: {fileID: 1485623528}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1815955121
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815955117}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 289301614986012343, guid: 1969ee8b8c3387442acaf5c18e259142, type: 3}
 --- !u!1 &1866304268
 GameObject:
   m_ObjectHideFlags: 0
@@ -1942,6 +2005,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1902238931 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7be3c2cf0cf954b4fb7af2531e0d79f0, type: 3}
+  m_PrefabInstance: {fileID: 875829863}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1902238935
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902238931}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 7be3c2cf0cf954b4fb7af2531e0d79f0, type: 3}
 --- !u!1 &1944991284
 GameObject:
   m_ObjectHideFlags: 0

@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 472b06e73d5a9dd41ba7b16be1940ad8, type: 3}
       propertyPath: m_Name
-      value: peon
+      value: Peon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -59,6 +59,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 472b06e73d5a9dd41ba7b16be1940ad8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3662861033239835960}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 472b06e73d5a9dd41ba7b16be1940ad8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8370085970101032631}
   m_SourcePrefab: {fileID: 100100000, guid: 472b06e73d5a9dd41ba7b16be1940ad8, type: 3}
 --- !u!1 &2732275554326643717 stripped
 GameObject:
@@ -86,3 +89,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &8370085970101032631
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2732275554326643717}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.5, y: 2.5, z: 1.5}
+  m_Center: {x: 0, y: 1.08, z: 0}
