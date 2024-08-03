@@ -1,0 +1,38 @@
+{
+  "Start": {
+    "Text": "This is the other test",
+    "Responses": [
+      "TestPositive": "Nice",
+      "TestNegative": "I've seen this before",
+    ],
+    "EndFlag": "False"
+  },
+  "TestPositive": {
+    "Text": "Yep",
+    "Responses": [
+      "TestEndPositive": "Yep",
+    ],
+    "EndFlag": "False"
+  },
+  "TestNegative": {
+    "Text": "Hey look at that you've been exploring",
+    "Responses": [
+      "TestEndNegative": "I mean not really there's only two things",
+    ],
+    "EndFlag": "False"
+  },
+  "TestEndPositive": {
+    "Text": "Okk well bye",
+    "Responses": [
+      "End Convo": "",
+    ],
+    "EndFlag": "True"
+  },
+  "TestEndNegative": {
+    "Text": "Still counts",
+    "Responses": [
+      "End Convo": "",
+    ],
+    "EndFlag": "True"
+  }
+}
