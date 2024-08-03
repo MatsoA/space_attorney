@@ -14,7 +14,9 @@ public class DialogueBoxController : MonoBehaviour
     [SerializeField] TMP_Text nameText;
     [SerializeField] GameObject dialogueBox;
     [SerializeField] GameObject ButtonPrefab; 
+    
     public GameObject Player;
+    public GameController gameController;
 
     Conversation currentConversation = null;
 
@@ -78,7 +80,8 @@ public class DialogueBoxController : MonoBehaviour
 
     }
 
-    public void EndDialogue() {
+    public void EndDialogue(string endCode) {
+        gameController.changeGameState(endCode);
         nameText.text = "";
         dialogueBox.gameObject.SetActive(false);
         currentConversation = null;

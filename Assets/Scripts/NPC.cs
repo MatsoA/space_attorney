@@ -5,10 +5,12 @@ using TMPro;
 
 public class NPC : MonoBehaviour, IInteractable
 {
-    public TMP_Text helperText;
+    public GameObject HelperHand;
+    [SerializeField] public bool isInteractable = true;
 
     public string npcName;
     public Conversation conversation;
+
 
     // Start is called before the first frame update
     void Start()
@@ -17,24 +19,26 @@ public class NPC : MonoBehaviour, IInteractable
     }
 
     public void HelperEnter () {
-        Debug.Log("Ready");
-
-        helperText.text = $"Click E to speak to {npcName}";
+        if (isInteractable) {
+           HelperHand.SetActive(true);
+        }
     }
 
     public void HelperExit () {
-        Debug.Log("Ready");
-
-        helperText.text = "";
+        if (isInteractable) {
+            HelperHand.SetActive(false);
+        }
     }
     
     public void Interact () 
     {
-        helperText.text = "";
-        DialogueBoxController.instance.StartDialogue(conversation, npcName);
+        if (isInteractable) {
+            HelperHand.SetActive(false);
+            DialogueBoxController.instance.StartDialogue(conversation, npcName);
+        }
     }
 
-    public void Uninteract () {
+    public void EndInteract () {
         Debug.Log("Closed");
     }
 }

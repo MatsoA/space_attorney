@@ -31,7 +31,7 @@ public class TestInteractable : MonoBehaviour, IInteractable
         Debug.Log("Clicked");
     }
 
-    public void Uninteract () {
+    public void EndInteract () {
         Debug.Log("Closed");
     }
 }

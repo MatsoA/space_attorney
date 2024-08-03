@@ -9,9 +9,10 @@ public class ResponseButtonScript : MonoBehaviour
     public bool endFlag;
 
     public void onSelect() {
+        Debug.Log("clicked");
         if (endFlag)
         {
-            DialogueBoxController.instance.EndDialogue();
+            DialogueBoxController.instance.EndDialogue(nextId);
         } else {
             DialogueBoxController.instance.ShowDialogue(nextId);
         }

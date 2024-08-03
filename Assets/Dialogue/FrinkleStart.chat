@@ -1,0 +1,40 @@
+{
+  "Start": {
+    "Text": "Oh hey, it’s the attorney. Welcome aboard and all that, I guess. Not quite sure why we’re here to be honest, but hopefully you know what you’re doing?",
+    "Responses": [
+      "1": "I'm the attorney?",
+      "2": "Where am I?",
+    ],
+    "EndFlag": "False"
+  },
+  "1": {
+    "Text": "Uh, I think so? I mean I don’t really know, but The Boss was yelling something about lawyer’s earlier. Something about “shoving the long arm of the law” up someone’s somewhere. He seemed really mad.", 
+    "Responses": [
+      "End": "Yikes. I’m not a lawyer though.",
+      "2": "Where am I?",
+    ],
+    "EndFlag": "False"
+  },
+  "2": {
+    "Text": "I don’t really know that either. All these planets look the same after a while. At least after we blow them up.",
+    "Responses": [
+      "End": "What?",
+      "3": "You don't seem to know very much do you...",
+    ],
+    "EndFlag": "False"
+  },
+  "3": {
+    "Text": "Hey, I'm trying okay, this job is hard ... and knowing things is also hard. You're not very nice, you know that? No wonder lawyers get a bad rap.",
+    "Responses": [
+      "End": "What? I'm not a lawyer. I don't even know how I got here.",
+    ],
+    "EndFlag": "False"
+  },
+  "End": {
+    "Text": "Look, we’re here to blow this planet up. We were about to but The Boss got a call and now we can’t do it anymore or something. You’re here to help with that I guess. You should go to talk to him.",
+    "Responses": [
+      "StartAfterFrinkle": "Hmm...okay",
+    ],
+    "EndFlag": "True"
+  }
+}

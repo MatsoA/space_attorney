@@ -1,0 +1,41 @@
+{
+  "Start": {
+    "Text": "Oh unholy blast, it’s the lawyer. I told them not to send you here, but APPARENTLY I have to cut some “red tape” before we can get rid of this ugly rock.",
+    "Responses": [
+      "1": "It doesn’t look that bad.",
+      "2": "I’m not a lawyer, sorry pal.",
+      "3": "What kind of red tape?"
+    ],
+    "EndFlag": "False"
+  },
+  "1": {
+    "Text": "Are you serious!? It’s BLUE. I HATE THE COLOR BLUE. That blue planet is covered in water and I hate getting wet. My wife has blue skin, and I can’t stand her. Those blue berryfish they eat in Regulus 4, well actually those are pretty tasty but if I eat too many my tentacles will get pudgy and I can’t STAND that.", 
+    "Responses": [
+      "4": "You don’t like the water? Aren’t you an octopus?",
+      "5": "I mean it’s also green.",
+    ],
+    "EndFlag": "False"
+  },
+  "2": {
+    "Text": "I don’t really know that either. All these planets look the same after a while. At least after we blow them up.",
+    "Responses": [
+      "End": "What?",
+      "3": "You don't seem to know very much do you...",
+    ],
+    "EndFlag": "False"
+  },
+  "3": {
+    "Text": "Hey, I'm trying okay, this job is hard ... and knowing things is also hard. You're not very nice, you know that? No wonder lawyers get a bad rap.",
+    "Responses": [
+      "End": "What? I'm not a lawyer. I don't even know how I got here.",
+    ],
+    "EndFlag": "False"
+  },
+  "End": {
+    "Text": "Look, we’re here to blow this planet up. We were about to but The Boss got a call and now we can’t do it anymore or something. You’re here to help with that I guess. You should go to talk to him.",
+    "Responses": [
+      "StartAfterFrinkle": "Hmm...okay",
+    ],
+    "EndFlag": "True"
+  }
+}

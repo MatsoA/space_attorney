@@ -12,5 +12,5 @@ public interface IInteractable
 
     void Interact();
     
-    void Uninteract();
+    void EndInteract();
 }

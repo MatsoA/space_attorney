@@ -33,10 +33,10 @@ public class PlayerController : MonoBehaviour
 
         Vector3 move = (transform.forward * Input.GetAxisRaw("Vertical")) + (transform.right * Input.GetAxisRaw("Horizontal"));
 
-        if (move != Vector3.zero)
-        {
-          transform.forward = move;
-        }
+        // if (move != Vector3.zero)
+        // {
+        //   transform.forward = move;
+        // }
 
         // Changes the height position of the player..
         if (Input.GetButtonDown("Jump") && groundedPlayer)
