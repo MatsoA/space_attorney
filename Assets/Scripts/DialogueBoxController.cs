@@ -81,7 +81,7 @@ public class DialogueBoxController : MonoBehaviour
     }
 
     public void EndDialogue(string endCode) {
-        gameController.changeGameState(endCode);
+        gameController.SetGameState(endCode);
         nameText.text = "";
         dialogueBox.gameObject.SetActive(false);
         currentConversation = null;

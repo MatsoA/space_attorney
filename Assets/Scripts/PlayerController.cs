@@ -7,24 +7,22 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
+
     public float playerSpeed = 2.0f;
     public float jumpHeight = 1.0f;
     public float gravityValue = -9.81f;
-
-    public float cameraSensX;
-    public float cameraSensY;
+    
+    public Transform helperHand;
 
     public bool inConversation = false;
 
     private IInteractable interactable = null;
 
-    public CameraController mainCamera;
+    public CameraController mainCameraController;
 
     void Movement() 
     {
         groundedPlayer = controller.isGrounded;
-
-        //Debug.Log(groundedPlayer);
 
         if (groundedPlayer && playerVelocity.y < 0)
         {
@@ -32,11 +30,6 @@ public class PlayerController : MonoBehaviour
         }
 
         Vector3 move = (transform.forward * Input.GetAxisRaw("Vertical")) + (transform.right * Input.GetAxisRaw("Horizontal"));
-
-        // if (move != Vector3.zero)
-        // {
-        //   transform.forward = move;
-        // }
 
         // Changes the height position of the player..
         if (Input.GetButtonDown("Jump") && groundedPlayer)
@@ -52,7 +45,9 @@ public class PlayerController : MonoBehaviour
 
     void Interact() {
         if (interactable != null) {
+            helperHand.gameObject.SetActive(false);
             interactable.Interact();
+            interactable = null;
         } else {
             Debug.Log("No interactable nearby");
         }
@@ -60,18 +55,17 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Interactable"))
-        {
-            interactable = other.gameObject.GetComponent<IInteractable>();
-
+        interactable = other.gameObject.GetComponent<IInteractable>();
+        if (interactable != null) {
+            helperHand.gameObject.SetActive(true);
             interactable.HelperEnter();
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Interactable"))
-        {
+        if (other.CompareTag("Interactable") && interactable != null) {
+            helperHand.gameObject.SetActive(false);
             interactable.HelperExit();
             interactable = null;
         }
@@ -80,9 +74,6 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         controller = gameObject.GetComponent<CharacterController>();
-
-        cameraSensX = mainCamera.sensX;
-        cameraSensY = mainCamera.sensY;
     }
 
     void Update()
@@ -90,16 +81,12 @@ public class PlayerController : MonoBehaviour
         if (!inConversation) {
             Movement();
 
-            mainCamera.sensX = cameraSensX;
-            mainCamera.sensY = cameraSensY;
+            mainCameraController.sensModifier = 1f;
         } else {
-            mainCamera.sensX = cameraSensX * 0.025f;
-            mainCamera.sensY = cameraSensY * 0.025f;
+            mainCameraController.sensModifier = 0.025f;
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
             Interact();
-        }
     }
 }

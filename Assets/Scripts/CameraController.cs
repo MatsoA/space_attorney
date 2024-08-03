@@ -6,9 +6,7 @@ public class CameraController : MonoBehaviour
 {
     public float sensX;
     public float sensY;
-
-    float xRotation;
-    float yRotation;
+    public float sensModifier = 1.0f;
 
     public Transform orientation;
 
@@ -19,26 +17,12 @@ public class CameraController : MonoBehaviour
         Cursor.visible = false;
     }
 
-    void CameraLook() {
-        //get mouse input
-        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
-
-        yRotation += mouseX;
-        xRotation -= mouseY;
-
-        //lock player to 90 degrees up or down
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-
-        //orient camera and player model
-        transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
-        orientation.rotation = Quaternion.Euler(0, yRotation, 0);
-        //Debug.Log(player.rotation);
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        CameraLook();
+        float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * sensX * sensModifier;
+        float mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * sensY * sensModifier;
+
+        orientation.Rotate(0, mouseX, 0);
+        transform.Rotate(-mouseY, 0, 0);
     }
 }

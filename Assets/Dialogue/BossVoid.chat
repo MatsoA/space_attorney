@@ -1,0 +1,31 @@
+{
+  "Start": {
+    "Text": "Hey, wanna learn something cool?",
+    "Responses": [
+      "StartPositive": "Sure!",
+      "StartNegative": "Nope",
+    ],
+    "EndFlag": "False"
+  },
+  "StartPositive": {
+    "Text": "Nice! We ran out of time to write the story so this is all the dialogue we have...",
+    "Responses": [
+      "EndPositive": "Oh no...",
+    ],
+    "EndFlag": "False"
+  },
+  "StartNegative": {
+    "Text": "Don't be so glum, it'll be fun!",
+    "Responses": [
+      "StartPositive": "If you say so...",
+    ],
+    "EndFlag": "False"
+  },
+  "EndPositive": {
+    "Text": "I guess you could say this game is de-void of content! Hohohoho",
+    "Responses": [
+      "End Convo": "...",
+    ],
+    "EndFlag": "True"
+  }
+}

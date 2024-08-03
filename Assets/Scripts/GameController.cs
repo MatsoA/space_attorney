@@ -7,18 +7,16 @@ public class GameController : MonoBehaviour
     private string gameState;
 
     public NPC Boss;
-    public NPC Frinkle;
+    public NPC Peon1;
     public NPC Peon2;
 
     // Start is called before the first frame update
     void Start()
     {
         gameState = "start";
-        Boss.isInteractable = false;
-        Frinkle.isInteractable = true;
     }
 
-    public void changeGameState(string newState)
+    public void SetGameState(string newState)
     {
         if (newState == "StartAfterFrinkle") {
             Boss.isInteractable = true;

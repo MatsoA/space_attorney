@@ -1,0 +1,32 @@
+{
+  "Start": {
+    "Text": "My name is Frinkle! I'm not an attorney, just a secretary.",
+    "Responses": [
+      "1": "I'm the attorney!",
+      "2": "Where am I?",
+    ],
+    "EndFlag": "False"
+  },
+  "1": {
+    "Text": "Ok, cool. We haven't got any work to do yet so you can hang around.", 
+    "Responses": [
+      "End": "Ok. I'm still getting paid though right?",
+    ],
+    "EndFlag": "False"
+  },
+  "2": {
+    "Text": "I don’t really know that either. All these planets look the same after a while. At least after we blow them up.",
+    "Responses": [
+      "1": "Not if I have anything to say about it! I'm the attorney!",
+      "End": "You don't seem to know very much do you...",
+    ],
+    "EndFlag": "False"
+  },
+  "End": {
+    "Text": "Yeah I'm not sure... Look, just talk to the boss.",
+    "Responses": [
+      "End Convo": "...",
+    ],
+    "EndFlag": "True"
+  }
+}

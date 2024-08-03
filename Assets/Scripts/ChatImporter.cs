@@ -51,9 +51,8 @@ public class ChatImporter : ScriptedImporter
                 var responsesEntries = responsesString.Trim('[', ']').Split(",");
                 foreach (var response in responsesEntries)
                 {
-                    if (response == "" || response == "    ]") {
+                    if (!response.Contains(":"))
                         continue;
-                    }  
 
                     //Debug.Log(response.Trim().Split(':')[1].Trim().Trim('"'));
 

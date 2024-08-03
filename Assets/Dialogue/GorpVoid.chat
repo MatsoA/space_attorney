@@ -1,0 +1,24 @@
+{
+  "Start": {
+    "Text": "I'm Gorp. I don't like talking.",
+    "Responses": [
+      "1": "What do you do?",
+      "1": "Are you paid to be here?",
+    ],
+    "EndFlag": "False"
+  },
+  "1": {
+    "Text": "...", 
+    "Responses": [
+      "End": "Hello?",
+    ],
+    "EndFlag": "False"
+  },
+  "End": {
+    "Text": "...",
+    "Responses": [
+      "69": "...",
+    ],
+    "EndFlag": "True"
+  }
+}
