@@ -11,9 +11,14 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 1.0f;
     public float gravityValue = -9.81f;
 
+    public float cameraSensX;
+    public float cameraSensY;
+
     public bool inConversation = false;
 
     private IInteractable interactable = null;
+
+    public CameraController mainCamera;
 
     void Movement() 
     {
@@ -75,12 +80,21 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         controller = gameObject.GetComponent<CharacterController>();
+
+        cameraSensX = mainCamera.sensX;
+        cameraSensY = mainCamera.sensY;
     }
 
     void Update()
     {
         if (!inConversation) {
             Movement();
+
+            mainCamera.sensX = cameraSensX;
+            mainCamera.sensY = cameraSensY;
+        } else {
+            mainCamera.sensX = cameraSensX * 0.025f;
+            mainCamera.sensY = cameraSensY * 0.025f;
         }
 
         if (Input.GetKeyDown(KeyCode.E))

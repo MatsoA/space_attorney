@@ -1,5 +1,5 @@
 {
-  "TestStart": {
+  "Start": {
     "Text": "This is the other test",
     "Responses": [
       "TestPositive": "Nice",

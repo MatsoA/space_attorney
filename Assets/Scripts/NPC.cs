@@ -30,7 +30,8 @@ public class NPC : MonoBehaviour, IInteractable
     
     public void Interact () 
     {
-       DialogueBoxController.instance.StartDialogue(conversation, npcName);
+        helperText.text = "";
+        DialogueBoxController.instance.StartDialogue(conversation, npcName);
     }
 
     public void Uninteract () {

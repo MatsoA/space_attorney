@@ -24,14 +24,14 @@
   "TestEndPositive": {
     "Text": "Great!",
     "Responses": [
-      "End Convo": "",
+      "End Convo": "See ya!",
     ],
     "EndFlag": "True"
   },
   "TestEndNegative": {
     "Text": "Well I do say so, so...",
     "Responses": [
-      "End Convo": "",
+      "End Convo": "hmm",
     ],
     "EndFlag": "True"
   }
