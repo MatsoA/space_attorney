@@ -19,7 +19,9 @@ public class CameraController : MonoBehaviour
         Cursor.visible = false;
     }
 
-    void CameraLook() {
+    // Update is called once per frame
+    void Update()
+    {
         //get mouse input
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
@@ -34,11 +36,5 @@ public class CameraController : MonoBehaviour
         transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
         //Debug.Log(player.rotation);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        CameraLook();
     }
 }
