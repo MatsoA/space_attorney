@@ -1,0 +1,38 @@
+{
+  "Start": {
+    "Text": "Welcome to the Test!",
+    "Responses": [
+      "TestPositive": "Yayy!",
+      "TestNegative": "okay..",
+    ],
+    "EndFlag": "False"
+  },
+  "TestPositive": {
+    "Text": "I like your enthusiasm! Can I count on you?",
+    "Responses": [
+      "TestEndPositive": "You bet!",
+    ],
+    "EndFlag": "False"
+  },
+  "TestNegative": {
+    "Text": "Don't be so glum chum, it'll be fun!",
+    "Responses": [
+      "TestEndNegative": "If you say so...",
+    ],
+    "EndFlag": "False"
+  },
+  "TestEndPositive": {
+    "Text": "Great!",
+    "Responses": [
+      "End Convo": "See ya!",
+    ],
+    "EndFlag": "True"
+  },
+  "TestEndNegative": {
+    "Text": "Well I do say so, so...",
+    "Responses": [
+      "End Convo": "hmm",
+    ],
+    "EndFlag": "True"
+  }
+}
