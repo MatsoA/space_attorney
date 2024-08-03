@@ -105,8 +105,8 @@ Shader "Unlit/Space"
 
                 float size = 0.01;
 
-                fixed4 col = Unity_SimpleNoise_float(i.uv, 100) * _BackgroundColor;
-                col += Unity_SimpleNoise_float(i.uv, 10) * _NebulaColor;
+                fixed4 col = Unity_SimpleNoise_float(i.uv + float2(6.9, 0), 100) * _BackgroundColor;
+                col += Unity_SimpleNoise_float(i.uv + float2(13.37, 5.9), 10) * _NebulaColor;
 
                 float2 pos = floor((1.0 / size) * i.uv);
                 float star = unity_noise_randomValue(pos);
