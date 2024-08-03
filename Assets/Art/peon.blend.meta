@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c187d4cb75ae00f428e2b6f7be1d66f2
+guid: 472b06e73d5a9dd41ba7b16be1940ad8
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,33 +7,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Fabric
-    second: {fileID: 2100000, guid: 11aa12d886456ca489c251ccc53c272b, type: 2}
+      name: eyes
+    second: {fileID: 2100000, guid: dac0f40aba270d84a944f487e18588c2, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Ground
-    second: {fileID: 2100000, guid: 435ccceed681bd249847a954fd66f13b, type: 2}
+      name: mouth
+    second: {fileID: 2100000, guid: 269eb2b4e9901b54ba885d477d2fec8a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Mouth
-    second: {fileID: 2100000, guid: f89dbba2ebb353047bdc7c547e0b4e60, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Outline
+      name: outline
     second: {fileID: 2100000, guid: 856fc12c798cebc48a85996e4958f053, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Pipe
-    second: {fileID: 2100000, guid: 43dc2fffbd4a9524caf8a7874048a501, type: 2}
+      name: shell
+    second: {fileID: 2100000, guid: e27389da115d79449b61a2e8ca130d62, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Tex
-    second: {fileID: 2100000, guid: f89dbba2ebb353047bdc7c547e0b4e60, type: 2}
+      name: tex
+    second: {fileID: 2100000, guid: 989346f8fc724a1479fa6f71c0dd1954, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -54,43 +49,14 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Armature|idle
-      takeName: Armature|idle
-      internalID: -1978303741906493279
-      firstFrame: 0
-      lastFrame: 34
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -103,7 +69,7 @@ ModelImporter:
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
-    importLights: 0
+    importLights: 1
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
@@ -152,13 +118,13 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c187d4cb75ae00f428e2b6f7be1d66f2
+guid: e2a6848098d7b7e4a8687f5e1725bdfd
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,33 +7,38 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Fabric
-    second: {fileID: 2100000, guid: 11aa12d886456ca489c251ccc53c272b, type: 2}
+      name: earth
+    second: {fileID: 2100000, guid: 262f3f5c280ac8445a9c540762e9c7b3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Ground
-    second: {fileID: 2100000, guid: 435ccceed681bd249847a954fd66f13b, type: 2}
+      name: ground
+    second: {fileID: 2100000, guid: b83944da2c6e9e0408d1c5ae2b7b1f1f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Mouth
-    second: {fileID: 2100000, guid: f89dbba2ebb353047bdc7c547e0b4e60, type: 2}
+      name: light
+    second: {fileID: 2100000, guid: 9cea03e06ecfe7f4bb921f0bc40fdb19, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Outline
-    second: {fileID: 2100000, guid: 856fc12c798cebc48a85996e4958f053, type: 2}
+      name: nacelle
+    second: {fileID: 2100000, guid: 104f1ec6e474ff146b27d28426d021b4, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Pipe
-    second: {fileID: 2100000, guid: 43dc2fffbd4a9524caf8a7874048a501, type: 2}
+      name: tex
+    second: {fileID: 2100000, guid: d633059ff7455ee40be2859e2f5d3a30, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Tex
-    second: {fileID: 2100000, guid: f89dbba2ebb353047bdc7c547e0b4e60, type: 2}
+      name: wall
+    second: {fileID: 2100000, guid: 4be8189970a9cb84b93f9a40afbe5393, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: window
+    second: {fileID: 2100000, guid: 5068293432720374ea4ff53dac91ebd5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -61,36 +66,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Armature|idle
-      takeName: Armature|idle
-      internalID: -1978303741906493279
-      firstFrame: 0
-      lastFrame: 34
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -103,7 +79,7 @@ ModelImporter:
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
-    importLights: 0
+    importLights: 1
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
